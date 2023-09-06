@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coming soon festival</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="para">
+            <h1>COMING SOON</h1>
+            <h3>KRISHNA JANMASHTAMI</h3>
+            <p>6 Sept 2025 - 7 Sept 2025</p>
+            <p id="demo">time</p>
+            <img src="./images/laddu1.png" alt="krishna image">
+
+        </div>
+    </div>
+
+    <script>
+        var dest = new Date('sept 6,2025 12:00:00').getTime();
+       setInterval(() =>{
+        var now = new Date().getTime();
+        var diff = dest - now;
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hour = Math.floor((diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
+        var min = Math.floor((diff % (1000 * 60 * 60) / (1000 * 60)));
+        var sec = Math.floor((diff % (1000 * 60) / (1000)));
+
+        document.getElementById("demo").innerHTML = days + ' Days, ' + hour + ' H: ' + min + ' M: ' + sec + ' S';
+        if(diff<=0)
+        {
+         document.getElementById('demo').innerHTML='festival Expired';
+        }
+       },1000);
+    </script>
+
+</body>
+
+</html>
